@@ -1,44 +1,98 @@
-Form.io React Starter Application
----------------------------------
-This is a starter application that uses React, Bootstrap, Webpack, and Form.io to create a powerful Serverless application.
-This example uses Contexts and hooks to manage application state. If you prefer Redux approach, take a look at the [redux-example](https://github.com/formio/react-app-starterkit/tree/redux-example).
-
-Installation
----------
- - Download this application within your local machine and then type the following.
-```
-npm install
-```
-
- - If you have not already, create a project on [https://portal.form.io](https://portal.form.io). You can import the ```src/project.json``` file to add all the forms and resources needed for this project.
-
- - Modify the ```src/config.js``` file to point the PROJECT_URL variable to the project you created in form.io.
-
-Running
------------
-You can develop within this application by typing the following
-
-```
-npm start
-```
-
-This will launch the application locally @ https://localhost:3000. Now, whenever you make changes, those will be directly reflected within the launched application.
 
 
-Building
-------------
-Once you have your application developed, it is now time to build the application for deployment. This can be done by typing the following.
+# TempWorkspace
 
-```
-npm run build
-```
+This project was generated using [Nx](https://nx.dev).
 
-This will generate the **build** folder which you can then use to install within any webserver, Github Page, an Amazon S3 bucket, etc.
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-Commands
-------------
-To see all available commands type the following
+🔎 **Smart, Fast and Extensible Build System**
 
-```
-npm run
-```
+## Adding capabilities to your workspace
+
+Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+
+These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+
+Below are our core plugins:
+
+- [React](https://reactjs.org)
+  - `npm install --save-dev @nrwl/react`
+- Web (no framework frontends)
+  - `npm install --save-dev @nrwl/web`
+- [Angular](https://angular.io)
+  - `npm install --save-dev @nrwl/angular`
+- [Nest](https://nestjs.com)
+  - `npm install --save-dev @nrwl/nest`
+- [Express](https://expressjs.com)
+  - `npm install --save-dev @nrwl/express`
+- [Node](https://nodejs.org)
+  - `npm install --save-dev @nrwl/node`
+
+There are also many [community plugins](https://nx.dev/community) you could add.
+
+## Generate an application
+
+Run `nx g @nrwl/react:app my-app` to generate an application.
+
+> You can use any of the plugins above to generate applications as well.
+
+When using Nx, you can create multiple applications and libraries in the same workspace.
+
+## Generate a library
+
+Run `nx g @nrwl/react:lib my-lib` to generate a library.
+
+> You can also use any of the plugins above to generate libraries as well.
+
+Libraries are shareable across libraries and applications. They can be imported from `@temp-workspace/mylib`.
+
+## Development server
+
+Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+
+## Build
+
+Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+
+Run `nx affected:test` to execute the unit tests affected by a change.
+
+## Running end-to-end tests
+
+Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+
+Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+
+## Understand your workspace
+
+Run `nx graph` to see a diagram of the dependencies of your projects.
+
+## Further help
+
+Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+
+
+## ☁ Nx Cloud
+
+### Distributed Computation Caching & Distributed Task Execution
+
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
+
+Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
+
+Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
+
+Visit [Nx Cloud](https://nx.app/) to learn more.
+
+npx nx serve form-builder
+npx nx build form-builder
+npx nx test form-builder
