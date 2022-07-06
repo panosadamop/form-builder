@@ -5,10 +5,11 @@ import { FormProvider } from '../formContext';
 import FormPage from './FormPage';
 import FormsList from './FormsList';
 import FormCreate from './FormCreate';
+import {Routes} from "react-router";
 
 const FormsPage = () => (
   <FormsProvider>
-    <Switch>
+    <Routes>
       <Route exact path="/form" component={FormsList}/>
       <Route
         exact
@@ -19,7 +20,7 @@ const FormsPage = () => (
         path="/form/:formId"
         render={ (props) => <FormProvider><FormPage {...props} /></FormProvider> }
       />
-    </Switch>
+    </Routes>
   </FormsProvider>
 )
 

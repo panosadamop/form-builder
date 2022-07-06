@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useSubmission, getSubmission } from '../submissionContext';
 import SubmissionView from './SubmissionView';
 import SubmissionDelete from './SubmissionDelete';
+import {Routes} from "react-router";
 
 const SubmissionPage = () => {
   const { formId, submissionId } = useParams();
@@ -12,8 +13,8 @@ const SubmissionPage = () => {
     getSubmission(dispatch, submissionId, formId);
   }, [dispatch, submissionId, formId]);
 
-  const View = () => <SubmissionView readOnly={true} />; 
-  const Edit = () => <SubmissionView readOnly={false} />; 
+  const View = () => <SubmissionView readOnly={true} />;
+  const Edit = () => <SubmissionView readOnly={false} />;
 
   const Navbar = () => (
     <ul className="nav nav-tabs">
@@ -43,7 +44,7 @@ const SubmissionPage = () => {
   return (
     <div>
       <Navbar />
-      <Switch>
+      <Routes>
         <Route
           exact
           path="/form/:formId/submission/:submissionId"
@@ -57,7 +58,7 @@ const SubmissionPage = () => {
           path="/form/:formId/submission/:submissionId/delete"
           component={SubmissionDelete}
         />
-      </Switch>
+      </Routes>
     </div>
   )
 };

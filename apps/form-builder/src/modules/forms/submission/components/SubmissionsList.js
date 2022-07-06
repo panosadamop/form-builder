@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { SubmissionGrid, Errors } from '@formio/react';
 import { Loading } from '../../../../common';
 import { useForm } from '../../form';
 import { useSubmissions, indexSubmissions } from '../submissionsContext';
+import {useNavigate} from "react-router";
 
 const SubmissionsList = (props) => {
   const {
@@ -14,7 +15,7 @@ const SubmissionsList = (props) => {
     getDeletePath,
     createSubmissionPath,
   } = props;
-  const history = useHistory();
+  const navigate = useNavigate();
   const { formId } = useParams();
   const [requestParams, setRequestParams] = useState({
     limit: 10,
@@ -29,13 +30,13 @@ const SubmissionsList = (props) => {
     switch(action) {
       case 'view':
       case 'row':
-        history.push(getViewPath ? getViewPath(formId, submission) : `/form/${formId}/submission/${submission._id}`);
+        navigate(getViewPath ? getViewPath(formId, submission) : `/form/${formId}/submission/${submission._id}`);
         break;
       case 'edit':
-        history.push(getEditPath ? getEditPath(formId, submission) : `/form/${formId}/submission/${submission._id}/edit`);
+        navigate(getEditPath ? getEditPath(formId, submission) : `/form/${formId}/submission/${submission._id}/edit`);
         break;
       case 'delete':
-        history.push(getDeletePath ? getDeletePath(formId, submission) : `/form/${formId}/submission/${submission._id}/delete`);
+        navigate(getDeletePath ? getDeletePath(formId, submission) : `/form/${formId}/submission/${submission._id}/delete`);
         break;
       default:
     }

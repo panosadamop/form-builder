@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link, Route, Switch, useParams } from 'react-router-dom';
+import { Link, Route, useParams } from 'react-router-dom';
 import { useSubmission, getSubmission, SubmissionView, SubmissionDelete } from '../../forms/submission';
+import {Routes} from "react-router";
 
 const EventPage = (props) => {
   const { eventId } = useParams();
@@ -11,7 +12,7 @@ const EventPage = (props) => {
     getSubmission(dispatchSubmissionEvent, eventId, null, 'event');
   }, [eventId, dispatchSubmissionEvent]);
 
-  const View = () => <SubmissionView readOnly={true} formName="event"/>; 
+  const View = () => <SubmissionView readOnly={true} formName="event"/>;
   const Edit = () => <SubmissionView readOnly={false} formName="event"/>;
 
   const Navbar = () => (
@@ -42,14 +43,14 @@ const EventPage = (props) => {
   return (
     <div>
       <Navbar />
-      <Switch>
+      <Routes>
         <Route exact path="/event/:eventId" component={View}/>
         <Route path="/event/:eventId/edit" component={Edit}/>
         <Route
           path="/event/:eventId/delete"
           render={(props) => <SubmissionDelete {...props} formName="event"/>}
         />
-      </Switch>
+      </Routes>
     </div>
   );
 };
