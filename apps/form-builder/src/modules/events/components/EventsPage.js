@@ -19,7 +19,6 @@ const EventsPage = () => {
       <SubmissionsProvider>
         <Routes>
           <Route
-            exact
             path="/event"
             render={(props) => (
               <SubmissionsList
@@ -34,7 +33,6 @@ const EventsPage = () => {
             )}
           />
           <Route
-            exact
             path="/event/create"
             render={(props) => (
               <SubmissionProvider>

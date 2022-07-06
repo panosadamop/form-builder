@@ -8,6 +8,7 @@ import { AppConfig } from './config';
 import './App.scss';
 import EventsPage from './modules/events/components/EventsPage';
 import { Alerts, AlertsProvider } from './modules/alerts';
+import {Routes} from "react-router";
 
 function App() {
   const { dispatch, state: { isActive } } = useAuth();
@@ -41,10 +42,12 @@ function App() {
                 </div>
                 : null
               }
-            <Route exact path="/" component={Home} />
+              <Routes>
+            <Route path="/" component={Home} />
             <Route path="/form" component={FormsPage} />
             <Route path="/event" render={(props) => <FormProvider><EventsPage {...props} /></FormProvider>} />
             <Route path="/auth" component={AuthPage} />
+              </Routes>
           </div>
         </AlertsProvider>
         <Footer></Footer>

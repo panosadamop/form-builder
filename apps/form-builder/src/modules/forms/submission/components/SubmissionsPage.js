@@ -10,7 +10,6 @@ const SubmissionsPage = () => (
   <SubmissionsProvider>
     <Routes>
       <Route
-        exact
         path="/form/:formId/submission"
         component={SubmissionsList}
       />

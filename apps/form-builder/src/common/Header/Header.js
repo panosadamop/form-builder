@@ -17,21 +17,20 @@ const Header = () => {
             <img className="logo" alt="Form.io" src="https://portal.form.io/images/formio-logo.png" height="25px" />
           </Link>
           <ul className="nav navbar-nav mr-auto">
-            <NavLink exact to="/" role="navigation button" className="nav-link">
+            <NavLink to="/" role="navigation button" className="nav-link">
               <span className="fa fa-home" />
             </NavLink>
-            { (authState.is.hasOwnProperty('administrator') && authState.is.administrator) ? (
+
               <NavLink to="/form" role="navigation link" className="nav-link">
                 <i className="fa fa-wpforms"></i>&nbsp;
                 Forms
               </NavLink>
-            ) : null }
-            { authState.authenticated ? (
+
               <NavLink to="/event" role="navigation link" className="nav-link">
                 <i className="fa fa-calendar"></i>&nbsp;
                 Events
               </NavLink>
-            ) : null }
+
           </ul>
           <ul className="nav navbar-nav ml-auto">
             { authState.authenticated ? (

@@ -1,4 +1,4 @@
-import { Link, Route, Switch, useParams } from 'react-router-dom'
+import { Link, Route, useParams } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import { useSubmission, getSubmission } from '../submissionContext';
 import SubmissionView from './SubmissionView';
